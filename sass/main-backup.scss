@@ -1,0 +1,122 @@
+// Import resets, variables, mixins and fonts
+@import "variables.scss";
+@import "mixins.scss";
+@import "normalize.css";
+@import "html5boilerplate.css";
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700";
+@import "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300";
+@import "http://fonts.googleapis.com/css?family=Amatic+SC";
+
+body {
+  font-size: 0.625em;
+  background: $sand;
+  font-family: 'Open Sans', sans-serif;
+  color: $night;
+}
+
+header {
+  background: $dirt;
+  height: 60px;
+  width: 100%;
+
+  #logo {
+    width: auto;
+    height: 50px;
+    padding-top: 2px;
+    float: left;
+  }
+
+  h1 {
+    font-family: 'Amatic SC', cursive;
+    font-size: 3.5em;
+    padding-top: 3px;
+    padding-left: 10px;
+    margin: 0;
+    float: left;
+  }
+
+  nav {
+    float: right;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 2.3em;
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        float: left;
+        padding-top: 14px;
+        padding-right: 35px;
+      }
+    }
+  }
+}
+
+main {
+  width: 100%;
+  margin: 0 auto;
+
+  section { width: 100%; }
+}
+
+.accordian {
+  width: 100%;
+  margin: 0 auto;
+
+  h3 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding: 40px 10px;
+    margin: 0;
+    color: $night;
+    font-size: 3.6em;
+    font-weight: normal;
+    width: 60%;
+    @include responsive(medium-screens) { width: 100%; }
+  }
+
+  dl {
+    padding: 0;
+    margin: 0;
+    color: $sand;
+
+    dt {
+      display: block;
+      width: 100%;
+      height: 60px;
+      background-color: $night;
+      border-bottom: 2px solid $sand;
+      padding: 20px 0 0 10px;
+      margin: 0;
+      text-transform: uppercase;
+      font-size: 2em;
+
+      &.active { background: $ocean; }
+
+      span {
+        float: right;
+        display: inline-block;
+        width: 20%;
+        height: 100%;
+        text-align: center;
+        background: $ocean;
+        padding-top: 20px;
+        margin-top: -20px;
+      }
+    }
+
+    dd { 
+      display: none;
+      margin: 0;
+      padding: 0;
+
+      &.active {
+        display: block;
+        background: $sand;
+        min-height: 100px;
+        width: 100%;
+      }
+    }
+  }
+}

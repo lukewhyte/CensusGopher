@@ -1,0 +1,98 @@
+// Import resets, variables, mixins and fonts
+@import "variables.scss";
+@import "mixins.scss";
+@import "normalize.css";
+@import "html5boilerplate.css";
+@import "http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700";
+@import "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300";
+@import "http://fonts.googleapis.com/css?family=Amatic+SC";
+
+body {
+  font-size: 0.625em;
+  background: #ffffff url('../assets/bg.png') repeat 0 0;
+  font-family: 'Open Sans', sans-serif;
+  color: #333;
+}
+
+header {
+  height: 60px;
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+
+  span {
+    font-family: 'Amatic SC', cursive;
+    font-size: 4em;
+    margin: 0;
+    display: inline-block;
+    border-bottom: 1px solid $red;
+  }
+}
+
+main {
+  width: 100%;
+  margin: 0 auto;
+
+  section { width: 100%; }
+}
+
+.accordian {
+  width: 50%;
+  margin: 0 auto;
+  @include responsive(medium-screens) { width: 80%; }
+  @include responsive(small-screens) { width: 100%; }
+
+  h3 {
+    font-family: 'Open Sans Condensed', sans-serif;
+    padding: 40px 0 8px;
+    margin: 0;
+    color: #333;
+    font-size: 2.5em;
+    font-weight: normal;
+    width: 100%;
+  }
+
+  dl {
+    padding: 0;
+    margin: 0;
+    color: #fff;
+
+    dt {
+      display: block;
+      width: 100%;
+      height: 40px;
+      background-color: $red;
+      border-bottom: 1px solid #fff;
+      padding: 0;
+      margin: 0;
+      text-transform: uppercase;
+      font-size: 1em;
+
+      &.active { background: darken($red, 15%); }
+
+      span {
+        float: right;
+        display: inline-block;
+        width: 20%;
+        height: 100%;
+        text-align: center;
+        background: darken($red, 15%);
+      }
+    }
+
+    dd { 
+      display: none;
+      margin: 0;
+      padding: 0;
+
+      p { margin: 0; }
+
+      &.active {
+        display: block;
+        background: #f3f3f3;
+        min-height: 100px;
+        width: 100%;
+      }
+    }
+  }
+}

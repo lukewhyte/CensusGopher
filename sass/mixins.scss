@@ -1,0 +1,17 @@
+@mixin box-shadow ($specs) {
+  -webkit-box-shadow: $specs;
+  -moz-box-shadow: $specs;
+  box-shadow: $specs;
+}
+
+@mixin responsive ($width) {
+  @if $width == small-screens {
+    @media only screen and (max-width: $small) { @content; }
+  }
+  @else if $width == medium-screens {
+    @media only screen and (max-width: $medium) { @content; }
+  }
+  @else if $width == large-screens {
+    @media only screen and (max-width: $large) { @content; }
+  }
+}
