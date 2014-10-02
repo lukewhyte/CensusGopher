@@ -6,6 +6,8 @@
     <title>Census Gopher | Easily Extract Data From The US Census</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="//use.typekit.net/crf0zzc.js"></script>
+    <script>try{Typekit.load();}catch(e){}</script>
     <link rel="stylesheet" href="sass/main.css">
     <script src="js/vendor/modernizr.min.js"></script>
   </head>
@@ -13,26 +15,46 @@
     <!--[if lt IE 8]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-
-    <header>
-      <span>Census Gopher</span>
+    <header class="clearfix">
+      <div class="top"></div>
+      <nav>
+        <span class="left">GETTING STARTED</span>
+        <span class="title">CENSUS GOPHER</span>
+        <span class="right">MY QUERY</span>
+      </nav>
     </header>
     <main>
-      <div class="accordian">
-        <h3>Click on the survey you'd like to query:</h3>
-        <dl>
-          <dt class="active">2010 | Census<span>1</span></dt>
-          <dd class="active">
-            <p>Burn notice mother fucker</p>
-          </dd>
-          <dt>2012 | American Community Survey (5yr)<span>1</span></dt>
-          <dd></dd>
-          <dt>2013 | American Community Survey (3yr)<span>1</span></dt>
-          <dd></dd>
-          <dt>2013 | American Community Survey (1yr)<span>1</span></dt>
-          <dd></dd>
-        </dl>
-      </div>
+      <section class="accordion">
+        <h1>Click the survey you'd like to query:</h1>
+        <ul>
+          <li class="slide">
+            <h2>2010 Decennial US Census</h2>
+            <ul>
+              <li>Just a test</li>
+            </ul>
+          </li>
+          <li class="slide">
+            <h2>2013 American Community Survey 1-year</h2>
+            <ul>
+              <li>Just a test</li>
+            </ul>
+          </li>
+          <li class="slide">
+            <h2>2011-2013 American Community Survey 3-year</h2>
+            <ul>
+              <li>Just a test</li>
+            </ul>
+          </li>
+          <li class="slide">
+            <h2>2009-2013 American Community Survey 5-year</h2>
+            <ul>
+              <li>Just a test</li>
+            </ul>
+          </li>
+        </ul>
+      </section>
     </main>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/temp.js"></script>
   </body>
 </html>

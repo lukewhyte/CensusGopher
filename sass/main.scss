@@ -3,96 +3,108 @@
 @import "mixins.scss";
 @import "normalize.css";
 @import "html5boilerplate.css";
+@import "http://fonts.googleapis.com/css?family=Syncopate";
 @import "http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700";
 @import "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300";
-@import "http://fonts.googleapis.com/css?family=Amatic+SC";
 
 body {
   font-size: 0.625em;
-  background: #ffffff url('../assets/bg.png') repeat 0 0;
+  background: #FFF;
   font-family: 'Open Sans', sans-serif;
-  color: #333;
+  color: $grey;
 }
 
 header {
-  height: 60px;
   width: 100%;
-  text-align: center;
-  margin-top: 40px;
+  font-family: 'Syncopate', sans-serif;
 
-  span {
-    font-family: 'Amatic SC', cursive;
-    font-size: 4em;
-    margin: 0;
-    display: inline-block;
-    border-bottom: 1px solid $red;
+  .top {
+    background: $orange;
+    height: 4px;
+    width: 100%;
+  }
+
+  nav {
+    width: 100%;
+    margin-top: 4px;
+
+    .left {
+      float: left;
+      padding: 12px 0 0 2%;
+      font-size: 1.6em;
+      width: 18%;
+      display: inline-block;
+    }
+
+    .title {
+      float: left;
+      font-size: 3.6em;
+      width: 60%;
+      text-align: center;
+      display: inline-block;
+    }
+
+    .right {
+      float: left;
+      padding: 12px 2% 0 0;
+      font-size: 1.6em;
+      width: 18%;
+      text-align: right;
+      display: inline-block;
+    }
   }
 }
 
 main {
   width: 100%;
-  margin: 0 auto;
 
   section { width: 100%; }
 }
 
-.accordian {
-  width: 50%;
-  margin: 0 auto;
-  @include responsive(medium-screens) { width: 80%; }
-  @include responsive(small-screens) { width: 100%; }
+.accordion {
+  width: 80%;
+  max-width: 900px;
+  margin: 80px auto 0;
+  font-family: "museo-slab", serif;
 
-  h3 {
-    font-family: 'Open Sans Condensed', sans-serif;
-    padding: 40px 0 8px;
-    margin: 0;
-    color: #333;
-    font-size: 2.5em;
-    font-weight: normal;
-    width: 100%;
+  h1 {
+    font-weight: 100;
+    font-style: italic;
+    font-size: 2.6em;
+    color: $orange;
+    border-bottom: 1px solid lighten($orange, 20%);
+    padding-bottom: 12px;
   }
 
-  dl {
+  ul {
     padding: 0;
     margin: 0;
-    color: #fff;
+    list-style-type: none;
+  }
 
-    dt {
-      display: block;
-      width: 100%;
-      height: 40px;
-      background-color: $red;
-      border-bottom: 1px solid #fff;
-      padding: 0;
-      margin: 0;
-      text-transform: uppercase;
-      font-size: 1em;
+  li {
+    padding: 12px 0;
+    border-bottom: 1px solid lighten($grey, 40%);
 
-      &.active { background: darken($red, 15%); }
-
-      span {
-        float: right;
-        display: inline-block;
-        width: 20%;
-        height: 100%;
-        text-align: center;
-        background: darken($red, 15%);
-      }
+    &:last-child {
+      border-bottom: 1px solid lighten($orange, 20%);
     }
 
-    dd { 
-      display: none;
+    h2 {
+      font-weight: 100;
+      font-style: italic;
+      font-size: 2.6em;
       margin: 0;
-      padding: 0;
+      cursor: pointer;
+    }
 
-      p { margin: 0; }
-
-      &.active {
-        display: block;
-        background: #f3f3f3;
-        min-height: 100px;
-        width: 100%;
-      }
+    ul { 
+      display: none;
+      padding-left: 10px;
+      li:last-child { border: none; }
     }
   }
+
+  @include responsive(medium-screens) { width: 90%; }
+  @include responsive(small-screens) { width: 98%; }
 }
