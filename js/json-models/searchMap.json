@@ -1,0 +1,26 @@
+{
+	"index": 1,
+	"options": [
+		{
+			"title": "2010 Decennial US Census",
+			"desc": "Compiled once every 10 years",
+			"gate": 11
+		},
+		{
+			"title": "2013 American Community Survey 1-year",
+			"desc": "Compiled once a year",
+			"gate": 12
+		},
+		{
+			"title": "2011-2013 American Community Survey 3-year",
+			"desc": "Compiled once every 3 years",
+			"gate": 13
+		},
+		{
+			"title": "2009-2013 American Community Survey 5-year",
+			"desc": "Compiled once every 5 years",
+			"gate": 14
+		}
+	],
+	"intro": "Click the survey you'd like to query:"
+}

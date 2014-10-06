@@ -1,0 +1,430 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/local/bin/node',
+1 verbose cli   '/usr/local/bin/npm',
+1 verbose cli   'install',
+1 verbose cli   'gulp-jshint',
+1 verbose cli   'gulp-sass',
+1 verbose cli   'gulp-uglify',
+1 verbose cli   'vinyl-source-stream',
+1 verbose cli   'browserify--save-dev' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 warn package.json CensusGopher@0.0.1 No README data
+5 verbose readDependencies using package.json deps
+6 verbose cache add [ 'gulp-jshint', null ]
+7 verbose cache add name=undefined spec="gulp-jshint" args=["gulp-jshint",null]
+8 verbose parsed url { protocol: null,
+8 verbose parsed url   slashes: null,
+8 verbose parsed url   auth: null,
+8 verbose parsed url   host: null,
+8 verbose parsed url   port: null,
+8 verbose parsed url   hostname: null,
+8 verbose parsed url   hash: null,
+8 verbose parsed url   search: null,
+8 verbose parsed url   query: null,
+8 verbose parsed url   pathname: 'gulp-jshint',
+8 verbose parsed url   path: 'gulp-jshint',
+8 verbose parsed url   href: 'gulp-jshint' }
+9 verbose cache add [ 'gulp-sass', null ]
+10 verbose cache add name=undefined spec="gulp-sass" args=["gulp-sass",null]
+11 verbose parsed url { protocol: null,
+11 verbose parsed url   slashes: null,
+11 verbose parsed url   auth: null,
+11 verbose parsed url   host: null,
+11 verbose parsed url   port: null,
+11 verbose parsed url   hostname: null,
+11 verbose parsed url   hash: null,
+11 verbose parsed url   search: null,
+11 verbose parsed url   query: null,
+11 verbose parsed url   pathname: 'gulp-sass',
+11 verbose parsed url   path: 'gulp-sass',
+11 verbose parsed url   href: 'gulp-sass' }
+12 verbose cache add [ 'gulp-uglify', null ]
+13 verbose cache add name=undefined spec="gulp-uglify" args=["gulp-uglify",null]
+14 verbose parsed url { protocol: null,
+14 verbose parsed url   slashes: null,
+14 verbose parsed url   auth: null,
+14 verbose parsed url   host: null,
+14 verbose parsed url   port: null,
+14 verbose parsed url   hostname: null,
+14 verbose parsed url   hash: null,
+14 verbose parsed url   search: null,
+14 verbose parsed url   query: null,
+14 verbose parsed url   pathname: 'gulp-uglify',
+14 verbose parsed url   path: 'gulp-uglify',
+14 verbose parsed url   href: 'gulp-uglify' }
+15 verbose cache add [ 'vinyl-source-stream', null ]
+16 verbose cache add name=undefined spec="vinyl-source-stream" args=["vinyl-source-stream",null]
+17 verbose parsed url { protocol: null,
+17 verbose parsed url   slashes: null,
+17 verbose parsed url   auth: null,
+17 verbose parsed url   host: null,
+17 verbose parsed url   port: null,
+17 verbose parsed url   hostname: null,
+17 verbose parsed url   hash: null,
+17 verbose parsed url   search: null,
+17 verbose parsed url   query: null,
+17 verbose parsed url   pathname: 'vinyl-source-stream',
+17 verbose parsed url   path: 'vinyl-source-stream',
+17 verbose parsed url   href: 'vinyl-source-stream' }
+18 verbose cache add [ 'browserify--save-dev', null ]
+19 verbose cache add name=undefined spec="browserify--save-dev" args=["browserify--save-dev",null]
+20 verbose parsed url { protocol: null,
+20 verbose parsed url   slashes: null,
+20 verbose parsed url   auth: null,
+20 verbose parsed url   host: null,
+20 verbose parsed url   port: null,
+20 verbose parsed url   hostname: null,
+20 verbose parsed url   hash: null,
+20 verbose parsed url   search: null,
+20 verbose parsed url   query: null,
+20 verbose parsed url   pathname: 'browserify--save-dev',
+20 verbose parsed url   path: 'browserify--save-dev',
+20 verbose parsed url   href: 'browserify--save-dev' }
+21 silly lockFile aeb19f3d-gulp-jshint gulp-jshint
+22 verbose lock gulp-jshint /Users/lukewhyte/.npm/aeb19f3d-gulp-jshint.lock
+23 silly lockFile 993318e6-gulp-sass gulp-sass
+24 verbose lock gulp-sass /Users/lukewhyte/.npm/993318e6-gulp-sass.lock
+25 silly lockFile 15fab96b-gulp-uglify gulp-uglify
+26 verbose lock gulp-uglify /Users/lukewhyte/.npm/15fab96b-gulp-uglify.lock
+27 silly lockFile a72c1fd8-vinyl-source-stream vinyl-source-stream
+28 verbose lock vinyl-source-stream /Users/lukewhyte/.npm/a72c1fd8-vinyl-source-stream.lock
+29 silly lockFile 6fda0e05-browserify-save-dev browserify--save-dev
+30 verbose lock browserify--save-dev /Users/lukewhyte/.npm/6fda0e05-browserify-save-dev.lock
+31 silly lockFile aeb19f3d-gulp-jshint gulp-jshint
+32 silly lockFile aeb19f3d-gulp-jshint gulp-jshint
+33 silly lockFile 6fda0e05-browserify-save-dev browserify--save-dev
+34 silly lockFile 6fda0e05-browserify-save-dev browserify--save-dev
+35 silly lockFile 993318e6-gulp-sass gulp-sass
+36 silly lockFile 993318e6-gulp-sass gulp-sass
+37 silly lockFile a72c1fd8-vinyl-source-stream vinyl-source-stream
+38 silly lockFile a72c1fd8-vinyl-source-stream vinyl-source-stream
+39 silly lockFile 15fab96b-gulp-uglify gulp-uglify
+40 silly lockFile 15fab96b-gulp-uglify gulp-uglify
+41 verbose addNamed [ 'gulp-jshint', '' ]
+42 verbose addNamed [ null, '*' ]
+43 silly lockFile 8b36bbde-gulp-jshint gulp-jshint@
+44 verbose lock gulp-jshint@ /Users/lukewhyte/.npm/8b36bbde-gulp-jshint.lock
+45 verbose addNamed [ 'browserify--save-dev', '' ]
+46 verbose addNamed [ null, '*' ]
+47 silly lockFile 03b10bc2-browserify-save-dev browserify--save-dev@
+48 verbose lock browserify--save-dev@ /Users/lukewhyte/.npm/03b10bc2-browserify-save-dev.lock
+49 verbose addNamed [ 'gulp-sass', '' ]
+50 verbose addNamed [ null, '*' ]
+51 silly lockFile 59b5e58d-gulp-sass gulp-sass@
+52 verbose lock gulp-sass@ /Users/lukewhyte/.npm/59b5e58d-gulp-sass.lock
+53 verbose addNamed [ 'vinyl-source-stream', '' ]
+54 verbose addNamed [ null, '*' ]
+55 silly lockFile b7d6893a-vinyl-source-stream vinyl-source-stream@
+56 verbose lock vinyl-source-stream@ /Users/lukewhyte/.npm/b7d6893a-vinyl-source-stream.lock
+57 verbose addNamed [ 'gulp-uglify', '' ]
+58 verbose addNamed [ null, '*' ]
+59 silly lockFile 044a9113-gulp-uglify gulp-uglify@
+60 verbose lock gulp-uglify@ /Users/lukewhyte/.npm/044a9113-gulp-uglify.lock
+61 silly addNameRange { name: 'gulp-jshint', range: '*', hasData: false }
+62 silly addNameRange { name: 'browserify--save-dev', range: '*', hasData: false }
+63 silly addNameRange { name: 'gulp-sass', range: '*', hasData: false }
+64 verbose request where is /gulp-jshint
+65 verbose request registry https://registry.npmjs.org/
+66 verbose request id c1af8fd8245a3831
+67 verbose url raw /gulp-jshint
+68 verbose url resolving [ 'https://registry.npmjs.org/', './gulp-jshint' ]
+69 verbose url resolved https://registry.npmjs.org/gulp-jshint
+70 verbose request where is https://registry.npmjs.org/gulp-jshint
+71 info trying registry request attempt 1 at 20:23:26
+72 http GET https://registry.npmjs.org/gulp-jshint
+73 verbose request where is /gulp-sass
+74 verbose request registry https://registry.npmjs.org/
+75 verbose url raw /gulp-sass
+76 verbose url resolving [ 'https://registry.npmjs.org/', './gulp-sass' ]
+77 verbose url resolved https://registry.npmjs.org/gulp-sass
+78 verbose request where is https://registry.npmjs.org/gulp-sass
+79 info trying registry request attempt 1 at 20:23:26
+80 http GET https://registry.npmjs.org/gulp-sass
+81 verbose request where is /browserify--save-dev
+82 verbose request registry https://registry.npmjs.org/
+83 verbose url raw /browserify--save-dev
+84 verbose url resolving [ 'https://registry.npmjs.org/', './browserify--save-dev' ]
+85 verbose url resolved https://registry.npmjs.org/browserify--save-dev
+86 verbose request where is https://registry.npmjs.org/browserify--save-dev
+87 info trying registry request attempt 1 at 20:23:26
+88 http GET https://registry.npmjs.org/browserify--save-dev
+89 silly addNameRange { name: 'vinyl-source-stream', range: '*', hasData: false }
+90 silly addNameRange { name: 'gulp-uglify', range: '*', hasData: false }
+91 verbose request where is /vinyl-source-stream
+92 verbose request registry https://registry.npmjs.org/
+93 verbose url raw /vinyl-source-stream
+94 verbose url resolving [ 'https://registry.npmjs.org/', './vinyl-source-stream' ]
+95 verbose url resolved https://registry.npmjs.org/vinyl-source-stream
+96 verbose request where is https://registry.npmjs.org/vinyl-source-stream
+97 info trying registry request attempt 1 at 20:23:26
+98 http GET https://registry.npmjs.org/vinyl-source-stream
+99 verbose request where is /gulp-uglify
+100 verbose request registry https://registry.npmjs.org/
+101 verbose url raw /gulp-uglify
+102 verbose url resolving [ 'https://registry.npmjs.org/', './gulp-uglify' ]
+103 verbose url resolved https://registry.npmjs.org/gulp-uglify
+104 verbose request where is https://registry.npmjs.org/gulp-uglify
+105 info trying registry request attempt 1 at 20:23:26
+106 http GET https://registry.npmjs.org/gulp-uglify
+107 http 200 https://registry.npmjs.org/vinyl-source-stream
+108 silly registry.get cb [ 200,
+108 silly registry.get   { date: 'Mon, 06 Oct 2014 03:23:26 GMT',
+108 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+108 silly registry.get     etag: '"A7A85RA8TYIGH5V7ISL0J16SD"',
+108 silly registry.get     'content-type': 'application/json',
+108 silly registry.get     'cache-control': 'max-age=60',
+108 silly registry.get     'content-length': '9213',
+108 silly registry.get     'accept-ranges': 'bytes',
+108 silly registry.get     via: '1.1 varnish',
+108 silly registry.get     age: '3648',
+108 silly registry.get     'x-served-by': 'cache-lax1435-LAX',
+108 silly registry.get     'x-cache': 'HIT',
+108 silly registry.get     'x-cache-hits': '1',
+108 silly registry.get     'x-timer': 'S1412565806.946965,VS0,VE0',
+108 silly registry.get     vary: 'Accept',
+108 silly registry.get     'keep-alive': 'timeout=10, max=50',
+108 silly registry.get     connection: 'Keep-Alive' } ]
+109 http 200 https://registry.npmjs.org/gulp-sass
+110 silly registry.get cb [ 200,
+110 silly registry.get   { date: 'Mon, 06 Oct 2014 03:23:26 GMT',
+110 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+110 silly registry.get     etag: '"1U7J4PX5R3VMHZ4QG21BRU43G"',
+110 silly registry.get     'content-type': 'application/json',
+110 silly registry.get     'cache-control': 'max-age=60',
+110 silly registry.get     'content-length': '19787',
+110 silly registry.get     'accept-ranges': 'bytes',
+110 silly registry.get     via: '1.1 varnish',
+110 silly registry.get     age: '14295',
+110 silly registry.get     'x-served-by': 'cache-lax1420-LAX',
+110 silly registry.get     'x-cache': 'HIT',
+110 silly registry.get     'x-cache-hits': '1',
+110 silly registry.get     'x-timer': 'S1412565806.942749,VS0,VE0',
+110 silly registry.get     vary: 'Accept',
+110 silly registry.get     'keep-alive': 'timeout=10, max=50',
+110 silly registry.get     connection: 'Keep-Alive' } ]
+111 http 200 https://registry.npmjs.org/gulp-uglify
+112 silly registry.get cb [ 200,
+112 silly registry.get   { date: 'Mon, 06 Oct 2014 03:23:26 GMT',
+112 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R14B04)',
+112 silly registry.get     etag: '"8I7DT6UM02ABKFA1RZDE9WVOJ"',
+112 silly registry.get     'content-type': 'application/json',
+112 silly registry.get     'cache-control': 'max-age=60',
+112 silly registry.get     'content-length': '18999',
+112 silly registry.get     'accept-ranges': 'bytes',
+112 silly registry.get     via: '1.1 varnish',
+112 silly registry.get     age: '4270',
+112 silly registry.get     'x-served-by': 'cache-lax1421-LAX',
+112 silly registry.get     'x-cache': 'HIT',
+112 silly registry.get     'x-cache-hits': '1',
+112 silly registry.get     'x-timer': 'S1412565806.951611,VS0,VE0',
+112 silly registry.get     vary: 'Accept',
+112 silly registry.get     'keep-alive': 'timeout=10, max=50',
+112 silly registry.get     connection: 'Keep-Alive' } ]
+113 silly addNameRange number 2 { name: 'vinyl-source-stream', range: '*', hasData: true }
+114 silly addNameRange versions [ 'vinyl-source-stream',
+114 silly addNameRange   [ '0.0.0', '0.1.0', '0.1.1', '1.0.0' ] ]
+115 verbose addNamed [ 'vinyl-source-stream', '1.0.0' ]
+116 verbose addNamed [ '1.0.0', '1.0.0' ]
+117 silly lockFile b760c02b-vinyl-source-stream-1-0-0 vinyl-source-stream@1.0.0
+118 verbose lock vinyl-source-stream@1.0.0 /Users/lukewhyte/.npm/b760c02b-vinyl-source-stream-1-0-0.lock
+119 silly addNameRange number 2 { name: 'gulp-sass', range: '*', hasData: true }
+120 silly addNameRange versions [ 'gulp-sass',
+120 silly addNameRange   [ '0.1.0',
+120 silly addNameRange     '0.2.1',
+120 silly addNameRange     '0.2.2',
+120 silly addNameRange     '0.2.3',
+120 silly addNameRange     '0.3.0',
+120 silly addNameRange     '0.4.0',
+120 silly addNameRange     '0.4.1',
+120 silly addNameRange     '0.5.0',
+120 silly addNameRange     '0.5.1',
+120 silly addNameRange     '0.5.2',
+120 silly addNameRange     '0.6.0',
+120 silly addNameRange     '0.7.0',
+120 silly addNameRange     '0.7.1',
+120 silly addNameRange     '0.7.2',
+120 silly addNameRange     '0.7.3',
+120 silly addNameRange     '1.0.0' ] ]
+121 verbose addNamed [ 'gulp-sass', '1.0.0' ]
+122 verbose addNamed [ '1.0.0', '1.0.0' ]
+123 silly lockFile ba14037a-gulp-sass-1-0-0 gulp-sass@1.0.0
+124 verbose lock gulp-sass@1.0.0 /Users/lukewhyte/.npm/ba14037a-gulp-sass-1-0-0.lock
+125 silly lockFile 9fa7316b-am-vinyl-source-stream-1-0-0-tgz https://registry.npmjs.org/vinyl-source-stream/-/vinyl-source-stream-1.0.0.tgz
+126 verbose lock https://registry.npmjs.org/vinyl-source-stream/-/vinyl-source-stream-1.0.0.tgz /Users/lukewhyte/.npm/9fa7316b-am-vinyl-source-stream-1-0-0-tgz.lock
+127 silly lockFile 1f08274b-rg-gulp-sass-gulp-sass-1-0-0-tgz https://registry.npmjs.org/gulp-sass/-/gulp-sass-1.0.0.tgz
+128 verbose lock https://registry.npmjs.org/gulp-sass/-/gulp-sass-1.0.0.tgz /Users/lukewhyte/.npm/1f08274b-rg-gulp-sass-gulp-sass-1-0-0-tgz.lock
+129 silly addNameRange number 2 { name: 'gulp-uglify', range: '*', hasData: true }
+130 silly addNameRange versions [ 'gulp-uglify',
+130 silly addNameRange   [ '0.0.1',
+130 silly addNameRange     '0.0.3',
+130 silly addNameRange     '0.0.4',
+130 silly addNameRange     '0.1.0',
+130 silly addNameRange     '0.2.0',
+130 silly addNameRange     '0.2.1',
+130 silly addNameRange     '0.3.0',
+130 silly addNameRange     '0.3.1',
+130 silly addNameRange     '0.3.2',
+130 silly addNameRange     '1.0.0-0',
+130 silly addNameRange     '1.0.0',
+130 silly addNameRange     '1.0.1' ] ]
+131 verbose addNamed [ 'gulp-uglify', '1.0.1' ]
+132 verbose addNamed [ '1.0.1', '1.0.1' ]
+133 silly lockFile cef7c707-gulp-uglify-1-0-1 gulp-uglify@1.0.1
+134 verbose lock gulp-uglify@1.0.1 /Users/lukewhyte/.npm/cef7c707-gulp-uglify-1-0-1.lock
+135 verbose addRemoteTarball [ 'https://registry.npmjs.org/vinyl-source-stream/-/vinyl-source-stream-1.0.0.tgz',
+135 verbose addRemoteTarball   '78e2030826f5b55cf96b102741f0abf1c411b9bb' ]
+136 verbose addRemoteTarball [ 'https://registry.npmjs.org/gulp-sass/-/gulp-sass-1.0.0.tgz',
+136 verbose addRemoteTarball   '6e79082d5d5bf0941eada27c57cf5b8e8d5c6117' ]
+137 silly lockFile b7d7ebc6-ulp-uglify-gulp-uglify-1-0-1-tgz https://registry.npmjs.org/gulp-uglify/-/gulp-uglify-1.0.1.tgz
+138 verbose lock https://registry.npmjs.org/gulp-uglify/-/gulp-uglify-1.0.1.tgz /Users/lukewhyte/.npm/b7d7ebc6-ulp-uglify-gulp-uglify-1-0-1-tgz.lock
+139 verbose addRemoteTarball [ 'https://registry.npmjs.org/gulp-uglify/-/gulp-uglify-1.0.1.tgz',
+139 verbose addRemoteTarball   'd70a24ff85b179a7b16cee577023f19b9c4ba96f' ]
+140 info retry fetch attempt 1 at 20:23:27
+141 verbose fetch to= /var/folders/_b/qgvp13wn1qzb90jxhj21ckbr0000gn/T/npm-23251-YR_yEwW3/registry.npmjs.org/vinyl-source-stream/-/vinyl-source-stream-1.0.0.tgz
+142 info retry fetch attempt 1 at 20:23:27
+143 verbose fetch to= /var/folders/_b/qgvp13wn1qzb90jxhj21ckbr0000gn/T/npm-23251-YR_yEwW3/registry.npmjs.org/gulp-uglify/-/gulp-uglify-1.0.1.tgz
+144 http GET https://registry.npmjs.org/vinyl-source-stream/-/vinyl-source-stream-1.0.0.tgz
+145 http GET https://registry.npmjs.org/gulp-uglify/-/gulp-uglify-1.0.1.tgz
+146 info retry fetch attempt 1 at 20:23:27
+147 verbose fetch to= /var/folders/_b/qgvp13wn1qzb90jxhj21ckbr0000gn/T/npm-23251-YR_yEwW3/registry.npmjs.org/gulp-sass/-/gulp-sass-1.0.0.tgz
+148 http GET https://registry.npmjs.org/gulp-sass/-/gulp-sass-1.0.0.tgz
+149 http 200 https://registry.npmjs.org/gulp-jshint
+150 silly registry.get cb [ 200,
+150 silly registry.get   { date: 'Mon, 06 Oct 2014 03:23:26 GMT',
+150 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+150 silly registry.get     etag: '"9SAPB31O7WIGVS6UVBVS9WR7Q"',
+150 silly registry.get     'content-type': 'application/json',
+150 silly registry.get     'cache-control': 'max-age=60',
+150 silly registry.get     'content-length': '49064',
+150 silly registry.get     'accept-ranges': 'bytes',
+150 silly registry.get     via: '1.1 varnish',
+150 silly registry.get     age: '17479',
+150 silly registry.get     'x-served-by': 'cache-lax1430-LAX',
+150 silly registry.get     'x-cache': 'HIT',
+150 silly registry.get     'x-cache-hits': '1',
+150 silly registry.get     'x-timer': 'S1412565806.947446,VS0,VE0',
+150 silly registry.get     vary: 'Accept',
+150 silly registry.get     'keep-alive': 'timeout=10, max=50',
+150 silly registry.get     connection: 'Keep-Alive' } ]
+151 http 404 https://registry.npmjs.org/browserify--save-dev
+152 verbose headers { date: 'Mon, 06 Oct 2014 03:23:27 GMT',
+152 verbose headers   server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+152 verbose headers   'content-type': 'application/json',
+152 verbose headers   'cache-control': 'max-age=0',
+152 verbose headers   'content-length': '52',
+152 verbose headers   'accept-ranges': 'bytes',
+152 verbose headers   via: '1.1 varnish',
+152 verbose headers   age: '0',
+152 verbose headers   'x-served-by': 'cache-lax1427-LAX',
+152 verbose headers   'x-cache': 'MISS',
+152 verbose headers   'x-cache-hits': '0',
+152 verbose headers   'x-timer': 'S1412565806.942075,VS0,VE96',
+152 verbose headers   'keep-alive': 'timeout=10, max=50',
+152 verbose headers   connection: 'Keep-Alive' }
+153 silly registry.get cb [ 404,
+153 silly registry.get   { date: 'Mon, 06 Oct 2014 03:23:27 GMT',
+153 silly registry.get     server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+153 silly registry.get     'content-type': 'application/json',
+153 silly registry.get     'cache-control': 'max-age=0',
+153 silly registry.get     'content-length': '52',
+153 silly registry.get     'accept-ranges': 'bytes',
+153 silly registry.get     via: '1.1 varnish',
+153 silly registry.get     age: '0',
+153 silly registry.get     'x-served-by': 'cache-lax1427-LAX',
+153 silly registry.get     'x-cache': 'MISS',
+153 silly registry.get     'x-cache-hits': '0',
+153 silly registry.get     'x-timer': 'S1412565806.942075,VS0,VE96',
+153 silly registry.get     'keep-alive': 'timeout=10, max=50',
+153 silly registry.get     connection: 'Keep-Alive' } ]
+154 silly lockFile 03b10bc2-browserify-save-dev browserify--save-dev@
+155 silly lockFile 03b10bc2-browserify-save-dev browserify--save-dev@
+156 silly addNameRange number 2 { name: 'gulp-jshint', range: '*', hasData: true }
+157 silly addNameRange versions [ 'gulp-jshint',
+157 silly addNameRange   [ '0.0.1',
+157 silly addNameRange     '0.1.0',
+157 silly addNameRange     '1.0.0',
+157 silly addNameRange     '1.1.0',
+157 silly addNameRange     '1.2.0',
+157 silly addNameRange     '1.3.0',
+157 silly addNameRange     '1.3.1',
+157 silly addNameRange     '1.3.2',
+157 silly addNameRange     '1.3.3',
+157 silly addNameRange     '1.3.4',
+157 silly addNameRange     '1.4.0',
+157 silly addNameRange     '1.4.1',
+157 silly addNameRange     '1.4.2',
+157 silly addNameRange     '1.5.0',
+157 silly addNameRange     '1.5.1',
+157 silly addNameRange     '1.5.2',
+157 silly addNameRange     '1.5.3',
+157 silly addNameRange     '1.5.4',
+157 silly addNameRange     '1.5.5',
+157 silly addNameRange     '1.5.6',
+157 silly addNameRange     '1.6.0',
+157 silly addNameRange     '1.6.1',
+157 silly addNameRange     '1.6.2',
+157 silly addNameRange     '1.6.3',
+157 silly addNameRange     '1.6.4',
+157 silly addNameRange     '1.7.0',
+157 silly addNameRange     '1.7.1',
+157 silly addNameRange     '1.8.0',
+157 silly addNameRange     '1.8.1',
+157 silly addNameRange     '1.8.2',
+157 silly addNameRange     '1.8.3',
+157 silly addNameRange     '1.8.4',
+157 silly addNameRange     '1.8.5' ] ]
+158 verbose addNamed [ 'gulp-jshint', '1.8.5' ]
+159 verbose addNamed [ '1.8.5', '1.8.5' ]
+160 silly lockFile 60bc8136-gulp-jshint-1-8-5 gulp-jshint@1.8.5
+161 verbose lock gulp-jshint@1.8.5 /Users/lukewhyte/.npm/60bc8136-gulp-jshint-1-8-5.lock
+162 silly lockFile 28d99ab9-ulp-jshint-gulp-jshint-1-8-5-tgz https://registry.npmjs.org/gulp-jshint/-/gulp-jshint-1.8.5.tgz
+163 verbose lock https://registry.npmjs.org/gulp-jshint/-/gulp-jshint-1.8.5.tgz /Users/lukewhyte/.npm/28d99ab9-ulp-jshint-gulp-jshint-1-8-5-tgz.lock
+164 verbose addRemoteTarball [ 'https://registry.npmjs.org/gulp-jshint/-/gulp-jshint-1.8.5.tgz',
+164 verbose addRemoteTarball   'c625a9167cb4a95048bc8ce3976f2531cc1873b2' ]
+165 info retry fetch attempt 1 at 20:23:27
+166 verbose fetch to= /var/folders/_b/qgvp13wn1qzb90jxhj21ckbr0000gn/T/npm-23251-YR_yEwW3/registry.npmjs.org/gulp-jshint/-/gulp-jshint-1.8.5.tgz
+167 http GET https://registry.npmjs.org/gulp-jshint/-/gulp-jshint-1.8.5.tgz
+168 http 200 https://registry.npmjs.org/gulp-sass/-/gulp-sass-1.0.0.tgz
+169 http 200 https://registry.npmjs.org/gulp-uglify/-/gulp-uglify-1.0.1.tgz
+170 silly lockFile 1f08274b-rg-gulp-sass-gulp-sass-1-0-0-tgz https://registry.npmjs.org/gulp-sass/-/gulp-sass-1.0.0.tgz
+171 silly lockFile 1f08274b-rg-gulp-sass-gulp-sass-1-0-0-tgz https://registry.npmjs.org/gulp-sass/-/gulp-sass-1.0.0.tgz
+172 silly lockFile ba14037a-gulp-sass-1-0-0 gulp-sass@1.0.0
+173 silly lockFile ba14037a-gulp-sass-1-0-0 gulp-sass@1.0.0
+174 silly lockFile 59b5e58d-gulp-sass gulp-sass@
+175 silly lockFile 59b5e58d-gulp-sass gulp-sass@
+176 silly lockFile b7d7ebc6-ulp-uglify-gulp-uglify-1-0-1-tgz https://registry.npmjs.org/gulp-uglify/-/gulp-uglify-1.0.1.tgz
+177 silly lockFile b7d7ebc6-ulp-uglify-gulp-uglify-1-0-1-tgz https://registry.npmjs.org/gulp-uglify/-/gulp-uglify-1.0.1.tgz
+178 silly lockFile cef7c707-gulp-uglify-1-0-1 gulp-uglify@1.0.1
+179 silly lockFile cef7c707-gulp-uglify-1-0-1 gulp-uglify@1.0.1
+180 silly lockFile 044a9113-gulp-uglify gulp-uglify@
+181 silly lockFile 044a9113-gulp-uglify gulp-uglify@
+182 http 200 https://registry.npmjs.org/gulp-jshint/-/gulp-jshint-1.8.5.tgz
+183 silly lockFile 28d99ab9-ulp-jshint-gulp-jshint-1-8-5-tgz https://registry.npmjs.org/gulp-jshint/-/gulp-jshint-1.8.5.tgz
+184 silly lockFile 28d99ab9-ulp-jshint-gulp-jshint-1-8-5-tgz https://registry.npmjs.org/gulp-jshint/-/gulp-jshint-1.8.5.tgz
+185 silly lockFile 60bc8136-gulp-jshint-1-8-5 gulp-jshint@1.8.5
+186 silly lockFile 60bc8136-gulp-jshint-1-8-5 gulp-jshint@1.8.5
+187 silly lockFile 8b36bbde-gulp-jshint gulp-jshint@
+188 silly lockFile 8b36bbde-gulp-jshint gulp-jshint@
+189 http 200 https://registry.npmjs.org/vinyl-source-stream/-/vinyl-source-stream-1.0.0.tgz
+190 silly lockFile 9fa7316b-am-vinyl-source-stream-1-0-0-tgz https://registry.npmjs.org/vinyl-source-stream/-/vinyl-source-stream-1.0.0.tgz
+191 silly lockFile 9fa7316b-am-vinyl-source-stream-1-0-0-tgz https://registry.npmjs.org/vinyl-source-stream/-/vinyl-source-stream-1.0.0.tgz
+192 silly lockFile b760c02b-vinyl-source-stream-1-0-0 vinyl-source-stream@1.0.0
+193 silly lockFile b760c02b-vinyl-source-stream-1-0-0 vinyl-source-stream@1.0.0
+194 silly lockFile b7d6893a-vinyl-source-stream vinyl-source-stream@
+195 silly lockFile b7d6893a-vinyl-source-stream vinyl-source-stream@
+196 error 404 404 Not Found: browserify--save-dev
+196 error 404
+196 error 404 'browserify--save-dev' is not in the npm registry.
+196 error 404 You should bug the author to publish it
+196 error 404 It was specified as a dependency of 'CensusGopher'
+196 error 404
+196 error 404 Note that you can also install from a
+196 error 404 tarball, folder, or http url, or git url.
+197 error System Darwin 11.4.2
+198 error command "/usr/local/bin/node" "/usr/local/bin/npm" "install" "gulp-jshint" "gulp-sass" "gulp-uglify" "vinyl-source-stream" "browserify--save-dev"
+199 error cwd /Users/lukewhyte/Documents/CensusGopher/js
+200 error node -v v0.10.32
+201 error npm -v 1.4.28
+202 error code E404
+203 verbose exit [ 1, true ]
