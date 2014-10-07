@@ -1,0 +1,15 @@
+{
+	"intro": "Contains the 2010 census data compiled from the questions asked of all people and about every housing unit.",
+	"modelMap": [
+		{
+			"id": 1,
+			"models": [
+				{
+					"title": "Total Population",
+					"universe": "Total Population",
+					"varNum": "P0010001"
+				}
+			]
+		}
+	]
+}

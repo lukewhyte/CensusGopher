@@ -1,1 +1,84 @@
-@import url(normalize.css);@import url(html5boilerplate.css);@import "http://fonts.googleapis.com/css?family=Syncopate";@import "http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700";@import "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300";body{font-size:0.625em;background:#FFF;font-family:'Open Sans', sans-serif;color:#5e5e54}header{width:100%;font-family:'Syncopate', sans-serif}header .top{background:#f67f09;height:4px;width:100%}header nav{width:100%;margin-top:4px}header nav .left{float:left;padding:12px 0 0 2%;font-size:1.6em;width:18%;display:inline-block}header nav .title{float:left;font-size:3.6em;width:60%;text-align:center;display:inline-block}header nav .right{float:left;padding:12px 2% 0 0;font-size:1.6em;width:18%;text-align:right;display:inline-block}main{width:100%}main section{width:100%}.accordion{width:80%;max-width:900px;margin:80px auto 0;font-family:"museo-slab", serif}.accordion h1{font-weight:100;font-style:italic;font-size:2.6em;color:#f67f09;border-bottom:1px solid #fab26b;padding-bottom:12px}.accordion ul{padding:0;margin:0;list-style-type:none}.accordion li{padding:12px 0;border-bottom:1px solid #c3c3bb}.accordion li:last-child{border-bottom:1px solid #fab26b}.accordion li h2{font-weight:100;font-style:italic;font-size:2.6em;margin:0;cursor:pointer}.accordion li ul{display:none;padding-left:10px}.accordion li ul li:last-child{border:none}@media only screen and (max-width: 900px){.accordion{width:90%}}@media only screen and (max-width: 500px){.accordion{width:98%}}
+@import url(normalize.css);
+@import url(html5boilerplate.css);
+@import url("http://fonts.googleapis.com/css?family=Syncopate");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300");
+body {
+  font-size: 0.625em;
+  background: #FFF;
+  font-family: 'Open Sans', sans-serif;
+  color: #5E5E54; }
+
+header {
+  width: 100%;
+  font-family: 'Syncopate', sans-serif; }
+  header .top {
+    background: #f67f09;
+    height: 4px;
+    width: 100%; }
+  header nav {
+    width: 100%;
+    margin-top: 4px; }
+    header nav .left {
+      float: left;
+      padding: 12px 0 0 2%;
+      font-size: 1.6em;
+      width: 18%;
+      display: inline-block; }
+    header nav .title {
+      float: left;
+      font-size: 3.6em;
+      width: 60%;
+      text-align: center;
+      display: inline-block; }
+    header nav .right {
+      float: left;
+      padding: 12px 2% 0 0;
+      font-size: 1.6em;
+      width: 18%;
+      text-align: right;
+      display: inline-block; }
+
+main {
+  width: 100%; }
+  main section {
+    width: 100%; }
+
+.accordion {
+  width: 80%;
+  max-width: 900px;
+  margin: 80px auto 0;
+  font-family: "museo-slab", serif; }
+  .accordion h1 {
+    font-weight: 100;
+    font-style: italic;
+    font-size: 2.6em;
+    color: #f67f09;
+    border-bottom: 1px solid #fab06b;
+    padding-bottom: 12px; }
+  .accordion ul {
+    padding: 0;
+    margin: 0;
+    list-style-type: none; }
+  .accordion li {
+    padding: 12px 0;
+    border-bottom: 1px solid #c3c2bb; }
+    .accordion li:last-child {
+      border-bottom: 1px solid #fab06b; }
+    .accordion li h2 {
+      font-weight: 100;
+      font-style: italic;
+      font-size: 2.6em;
+      margin: 0;
+      cursor: pointer; }
+    .accordion li ul {
+      display: none;
+      padding-left: 10px; }
+      .accordion li ul li:last-child {
+        border: none; }
+  @media only screen and (max-width: 900px) {
+    .accordion {
+      width: 90%; } }
+  @media only screen and (max-width: 500px) {
+    .accordion {
+      width: 98%; } }

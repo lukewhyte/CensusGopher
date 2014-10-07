@@ -4,31 +4,41 @@ var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
 	browserify = require('browserify'),
 	streamify = require('gulp-streamify'),
-	source = require('vinyl-source-stream');
+	source = require('vinyl-source-stream'),
+	paths = {
+		scripts: ['./*.js', './models/*.js', './json-models/*.json'],
+		sass: ['../sass/*.scss']
+	},
 
-gulp.task('lint', function() {
+	runSass = function (style) {
+		return gulp.src('../sass/main.scss')
+    .pipe(sass({ style: style }))
+    .pipe(gulp.dest('../sass'));
+	};
+
+gulp.task('lint', function () {
   return gulp.src('*.js')
     .pipe(jshint())
     .pipe(jshint.reporter('default'));
 });
 
-gulp.task('sass', function() {
-  return gulp.src('../scss/main.scss')
-    .pipe(sass())
-    .pipe(gulp.dest('../scss'));
+gulp.task('sandbox', function () {
+  gulp.watch(paths.scripts, function () {
+  	var bundleStream = browserify('./gopher.js').bundle();
+			bundleStream
+		    .pipe(source('gopher.js'))
+		    .pipe(gulp.dest('./build/'));
+		  });
+  gulp.watch(paths.sass, function () {
+  	runSass('expanded');
+  });
 });
 
-gulp.task('build', function() {
+gulp.task('default', function () {
 	var bundleStream = browserify('./gopher.js').bundle();
 	bundleStream
     .pipe(source('gopher.js'))
     .pipe(streamify(uglify()))
     .pipe(gulp.dest('./build/'));
+  runSass('compressed');
 });
-
-gulp.task('watch', function() {
-    gulp.watch('*.js', ['lint', 'build']);
-    gulp.watch('scss/*.scss', ['sass']);
-});
-
-gulp.task('default', ['sass', 'build', 'watch']);

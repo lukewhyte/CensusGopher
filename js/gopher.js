@@ -1,18 +1,3 @@
-var searchMap = require('./models/searchMap.js'),
-	accordion = Backbone.View.extend({
-		el: $('section .accordion'),
-
-		template: _.template($('#accordionTemplate').html()),
-
-		events: {
-			'click .accordion ul': 'openLi'
-		},
-
-		initialize: function () {
-			this.render();
-		}
-	});
-
 (function ($) {
 	var sliding = function ($target) {
 		var $titles = $(this).find('.slide h2');

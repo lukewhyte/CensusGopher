@@ -3,9 +3,9 @@
 @import "mixins.scss";
 @import "normalize.css";
 @import "html5boilerplate.css";
-@import "http://fonts.googleapis.com/css?family=Syncopate";
-@import "http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700";
-@import "http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300";
+@import url("http://fonts.googleapis.com/css?family=Syncopate");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700");
+@import url("http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300");
 
 body {
   font-size: 0.625em;
