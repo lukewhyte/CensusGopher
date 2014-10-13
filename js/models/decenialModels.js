@@ -1,6 +1,6 @@
 var DecennialData = Backbone.Model.extend({
 	defaults: {
-		isVariable: false,
+		variable: null,
 		options: []
 	}
 });
