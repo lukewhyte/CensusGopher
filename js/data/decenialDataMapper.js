@@ -1,82 +1,71 @@
-var input = data["census-api"].vars.var,
-	tree = {
-		branches: {
-			topLevel: [
-				{
-					title: "Housing Variables",
-					desc: "",
-					gate: "H0001",
-					key: null
-				},
-				{
-					title: "Population Variable",
-					desc: "",
-					gate: "P001",
-					key: null
-				}
-			]
-		}
-	},
-	branches = tree.branches,
+var input = data["census-api"].vars.var, // grab the array of variable objects
+	branches = {}, // This object will be used to build a semantic tree structure that will be flattened into result
+	result = [],
 
-	filterInput = function (obj) {
-		var pre = obj["xml$id"].charAt(0);
-		return obj["xml$id"].length > 7 && (pre === 'H' || pre === 'P'); 
+	filterInput = function (obj) { // We use this to remove all the geographic variables
+		var id = obj["xml$id"];
+		return id.length > 7 && (id.charAt(0) === 'H' || id.charAt(0) === 'P'); 
 	},
 
-	addToTree = function (obj, index, arr) {
+	addToTree = function (obj, index, arr) { 
+		// Here we take all the variable objects and restructure them into the tree. If no parent exists
+		// for a variable type, one will be created – named a 'gate'
 		var id = obj["xml$id"],
-			output = {
+			variable = {
 				label: obj.label,
 				concept: obj.concept,
-				gate: null,
-				key: null
+				key: id,
+				parent: null
 			},
 			secLevel = (id.charAt(1) === "C") ? id.slice(0, 6) : id.slice(0, 4),
 			thirdLevel = secLevel + id.charAt(secLevel.length),
 
 			createVar = function (parent) {
-				output.key = id;
-				branches[parent].push(output);
+				variable.parent = parent;
+				branches[parent].push(variable);
 			},
 
-			createGate = function () {
-				var toAdd = {};
+			createGate = function (parent, child) {
+				var gate = {};
 				each(arr, function (obj) {
-					if (obj["xml$id"] === thirdLevel + "0001" || obj["xml$id"] === thirdLevel + "001") {
-						newGate = {
+					if (obj["xml$id"] === child + "0001" || obj["xml$id"] === child + "001") {
+						gate = {
 							label: obj["label"],
 							concept: obj["concept"],
-							gate: thirdLevel
+							children: child,
+							parent: parent
 						};
-						branches[secLevel].push(newGate);
+						branches[secLevel].push(gate);
 					}
 				});
-				branches[thirdLevel] = [];
 			};
 
-		if (!branches[secLevel]) branches[secLevel] = [];
+		if (!branches[secLevel]) { // If the second level obj for this type of variable doesn't exist, create it
+			branches[secLevel] = [];
+			createGate(id.charAt(0), secLevel);
+		}
 
-		if (/^[a-z]+$/i.test(id.charAt(secLevel.length))) {
-		 if (!branches[thirdLevel]) {
-				createGate();	
+		if (/^[a-z]+$/i.test(id.charAt(secLevel.length))) { // If this is a third level variable..
+		  if (!branches[thirdLevel]) { // If the third level obj for this type of variable doesn't exist, create it
+				createGate(secLevel, thirdLevel);
+				branches[thirdLevel] = [];
 			}
-			createVar(thirdLevel);
+			createVar(thirdLevel); // Create a third level variable
 		} else {
-			createVar(secLevel);
+			createVar(secLevel); // Create a second level variable
 		}
 	},
 
-	formatBranchStrings = function (obj, key, arr) {
+	formatBranchStrings = function (obj, key, arr) { // After we create the tree, we need to format the content
 		var parse = {
 			label: function (str) {
-				str = str.replace(/:/g, '');
-				str = str.replace(/!!/g, '>');
-				return str;
+				return str.replace(/:|!!/g, function (match) {
+					return (match === ':') ? '' : '>';
+				});
 			},
 			concept: function (str) {
-				str = str.replace(/^(.*?)\. /, '');
 				obj.cells = str.slice(str.indexOf('[') + 1, str.indexOf(']'));
+				str = str.replace(/^(.*?)\. /, '');
 				str = str.slice(0, str.indexOf('[')).trim();
 				return str.charAt(0) + str.slice(1).toLowerCase();
 			}
@@ -90,8 +79,14 @@ _.chain(input)
 	.each(addToTree)
 	.value();
 
-map(tree.branches, function (arr) {
+map(branches, function (arr) {
 	if (isArray(arr)) each(arr, formatBranchStrings);
 });
 
-tree
+each(branches, function (arr) {
+	for (var i = 0; i < arr.length; i++) {
+		result.push(arr[i]);
+	}
+});
+
+result
