@@ -8,13 +8,13 @@ var input = data["census-api"].vars.var, // grab the array of variable objects
 	},
 
 	addToTree = function (obj, index, arr) { 
-		// Here we take all the variable objects and restructure them into the tree. If no parent exists
-		// for a variable type, one will be created – named a 'gate'
+		// Here we take all the variable objects and restructure them into the tree.
+		// If no parent (aka 'gate;) exists for a variable type, one will be created
 		var id = obj["xml$id"],
 			variable = {
 				label: obj.label,
 				concept: obj.concept,
-				key: id,
+				id: id,
 				parent: null
 			},
 			secLevel = (id.charAt(1) === "C") ? id.slice(0, 6) : id.slice(0, 4),
@@ -64,9 +64,10 @@ var input = data["census-api"].vars.var, // grab the array of variable objects
 				});
 			},
 			concept: function (str) {
-				obj.cells = str.slice(str.indexOf('[') + 1, str.indexOf(']'));
+				var areCells = str.indexOf('[') !== -1;
+				obj.cells = areCells ? str.slice(str.indexOf('[') + 1, str.indexOf(']')) : null;
 				str = str.replace(/^(.*?)\. /, '');
-				str = str.slice(0, str.indexOf('[')).trim();
+				if (areCells) str = str.slice(0, str.indexOf('[')).trim();
 				return str.charAt(0) + str.slice(1).toLowerCase();
 			}
 		};
