@@ -1,0 +1,39 @@
+{
+  "name": "CensusGopher",
+  "version": "0.0.1",
+  "description": "Easily Extract Data From The US Census",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lukewhyte/CensusGopher"
+  },
+  "keywords": [
+    "census",
+    "US",
+    "census",
+    "data",
+    "visualization",
+    "map",
+    "json"
+  ],
+  "author": "Luke Whyte",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lukewhyte/CensusGopher/issues"
+  },
+  "homepage": "http://censusgopher.com",
+  "dependencies": {
+    "express": "~3.1.0",
+    "path": "~0.4.9",
+    "mongoose": "~3.5.5"
+  },
+  "devDependencies": {
+    "browserify": "^6.0.2",
+    "gulp": "^3.8.8",
+    "gulp-jshint": "^1.8.5",
+    "gulp-sass": "^1.0.0",
+    "gulp-streamify": "0.0.5",
+    "gulp-uglify": "^1.0.1",
+    "vinyl-source-stream": "^1.0.0",
+    "xml2json-command": "0.0.2"
+  }
+}
