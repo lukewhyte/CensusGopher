@@ -6,8 +6,13 @@ var gulp = require('gulp'),
 	streamify = require('gulp-streamify'),
 	source = require('vinyl-source-stream'),
 	paths = {
-		scripts: ['./*.js', './models/*.js', './json-models/*.json'],
+		scripts: ['./*.js', './models/*.js', './views/*.js', './collections/*.js'],
 		sass: ['../sass/*.scss']
+	},
+
+	swallowError = function (err) {
+	  console.log(err.message);
+    this.end();
 	},
 
 	runSass = function (style) {
@@ -24,7 +29,7 @@ gulp.task('lint', function () {
 
 gulp.task('sandbox', function () {
   gulp.watch(paths.scripts, function () {
-  	var bundleStream = browserify('./gopher.js').bundle();
+  	var bundleStream = browserify('./gopher.js').bundle().on('error', swallowError);
 			bundleStream
 		    .pipe(source('gopher.js'))
 		    .pipe(gulp.dest('./build/'));
@@ -32,7 +37,7 @@ gulp.task('sandbox', function () {
   gulp.watch(paths.sass, function () {
   	runSass('expanded');
   });
-});
+}).on('error', swallowError);
 
 gulp.task('default', function () {
 	var bundleStream = browserify('./gopher.js').bundle();

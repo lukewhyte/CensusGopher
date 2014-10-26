@@ -1,8 +1,12 @@
-var DecennialData = Backbone.Model.extend({
+var DecenialData = Backbone.Model.extend({
 	defaults: {
-		variable: null,
-		options: []
+		label: '',
+		concept: '',
+		parent: '',
+		children: null,
+		cells: null,
+		id: null
 	}
 });
 
-module.exports = searchMap;
+module.exports = DecenialData;

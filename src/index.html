@@ -26,42 +26,17 @@
     <main>
       <section class="accordion">
         <h1>Click the survey you'd like to query:</h1>
-        <ul>
-          <li class="slide">
-            <h2>2010 Decennial US Census</h2>
-            <ul>
-              <li>Compiled once every 10 years</li>
-            </ul>
-          </li>
-          <li class="slide">
-            <h2>2013 American Community Survey 1-year</h2>
-            <ul>
-              <li>Compiled once a year</li>
-            </ul>
-          </li>
-          <li class="slide">
-            <h2>2011-2013 American Community Survey 3-year</h2>
-            <ul>
-              <li>Compiled once every 3 years</li>
-            </ul>
-          </li>
-          <li class="slide">
-            <h2>2009-2013 American Community Survey 5-year</h2>
-            <ul>
-              <li>Compiled once every 5 years</li>
-            </ul>
-          </li>
-        </ul>
       </section>
     </main>
-    <script type="text/template" id="accordionTemplate">
-      <h1><%= intro %></h1>
-      <ul></ul>
+    <script type="text/template" id="variableTemplate">
+      <h2><%= label %></h2>
+      <ul>
+        <li class="concept"><%= concept %></li>
+      </ul>
     </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/vendor/underscore.js"></script>
     <script src="js/vendor/backbone.js"></script>
-    <script src="js/vendor/backbone.localstorage.min.js"></script>
     <script src="js/build/gopher.js"></script>
   </body>
 </html>

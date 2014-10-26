@@ -1,20 +1,23 @@
-(function ($) {
-	var sliding = function ($target) {
-		var $titles = $(this).find('.slide h2');
-		if (!$target.hasClass('active')) {
-			$(this).find('ul').slideUp('fast');
-			$titles.removeClass('active');
-			$target.addClass('active').next('ul').slideDown();
-		} else {
-			$target.removeClass('active').next('ul').slideUp();
+var accordion = require('./views/accordionView.js'),
+	initialMenus = [
+		{
+			label: '2010 Decennial US Census',
+			concept: 'Compiled once every 10 years'
+		},
+		{
+			label: '2013 American Community Survey 1-year',
+			concept: 'Compiled once a year'
+		},
+		{
+			label: '2011-2013 American Community Survey 3-year',
+			concept: 'Compiled once every 3 years'
+		},
+		{
+			label: '2009-2013 American Community Survey 5-year',
+			concept: 'Compiled once every 5 years'
 		}
-	};
+	];
 
-	$(function () {
-		$('.accordion ul').click(function (e) {
-			if ($(e.target).is('.slide h2')) {
-				sliding.call(this, $(e.target));
-			}
-		});
-	});
-}(jQuery));
+$(function () {
+	new accordion(initialMenus);
+});

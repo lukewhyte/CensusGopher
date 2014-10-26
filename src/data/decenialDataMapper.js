@@ -65,7 +65,7 @@ var input = data["census-api"].vars.var, // grab the array of variable objects
 			},
 			concept: function (str) {
 				var areCells = str.indexOf('[') !== -1;
-				obj.cells = areCells ? str.slice(str.indexOf('[') + 1, str.indexOf(']')) : null;
+				obj.cells = areCells ? parseInt(str.slice(str.indexOf('[') + 1, str.indexOf(']')), 10) : null;
 				str = str.replace(/^(.*?)\. /, '');
 				if (areCells) str = str.slice(0, str.indexOf('[')).trim();
 				return str.charAt(0) + str.slice(1).toLowerCase();
