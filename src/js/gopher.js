@@ -2,7 +2,9 @@ var accordion = require('./views/accordionView.js'),
 	initialMenus = [
 		{
 			label: '2010 Decennial US Census',
-			concept: 'Compiled once every 10 years'
+			concept: 'Compiled once every 10 years',
+			children: 'decenialTop',
+			cells: 2
 		},
 		{
 			label: '2013 American Community Survey 1-year',

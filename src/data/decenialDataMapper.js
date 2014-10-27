@@ -1,6 +1,21 @@
 var input = data["census-api"].vars.var, // grab the array of variable objects
 	branches = {}, // This object will be used to build a semantic tree structure that will be flattened into result
-	result = [],
+	result = [
+		{
+	    label: 'Housing',
+	    concept: 'Search for data based on housing parameters',
+	    children: 'H',
+	    parent: 'decenialTop',
+	    cells: 25
+	  },
+	  {
+	    label: 'Population',
+	    concept: 'Search for data based on population parameters',
+	    children: 'P',
+	    parent: 'decenialTop',
+	    cells: 84
+	  }
+	],
 
 	filterInput = function (obj) { // We use this to remove all the geographic variables
 		var id = obj["xml$id"];

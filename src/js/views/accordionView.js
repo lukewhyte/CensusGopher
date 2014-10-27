@@ -4,7 +4,7 @@ var appCore = require('./menuView.js'),
 
     initialize: function (initialMenu) {
       var intialCollection = new appCore.DecenialCollection(initialMenu),
-        variables = new appCore.MenuView(intialCollection);    
+        variables = new appCore.MenuView({collection: intialCollection});    
       variables.$el.addClass('topMenu'); 
       this.$el.append(variables.el);
     }
