@@ -25,15 +25,16 @@
     </header>
     <main>
       <section class="accordion">
+        <!-- Turn this h1 into the breadcrumbs and center the search bar above!!!!!!!!!!!!!!!!!!!!!!! -->
+        <!-- We can also implement the decoder/documentation/reference as a tab on the sidebar and shrink the em's when pulling it out -->
         <h1>Click the survey you'd like to query:</h1>
       </section>
     </main>
     <script type="text/template" id="variableTemplate">
-      <h2><%= label %></h2>
+      <h2><%= label %> &ndash; <%= concept %></h2>
       <ul>
-        <li class="concept"><%= concept %></li>
-        <li class="cells">This menu has <%= cells %> sub-menus/variables</li>
-        <li class="sub-menu"></li>
+        <li class="cells">&ndash; This menu has <%= cells %> sub-menus/variables</li>
+        <li class="sub-menu">&ndash; Click to explore</li>
       </ul>
     </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

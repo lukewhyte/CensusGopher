@@ -1,12 +1,20 @@
-var appCore = require('./menuView.js'),
+var MenuView = require('./menuView.js'),
+	collection = require('../collections/decenialCollection.js'),
+
   AccordionView = Backbone.View.extend({
     el: '.accordion',
 
     initialize: function (initialMenu) {
-      var intialCollection = new appCore.DecenialCollection(initialMenu),
-        variables = new appCore.MenuView({collection: intialCollection});    
-      variables.$el.addClass('topMenu'); 
-      this.$el.append(variables.el);
+    	var menu = {};
+      this.collection = collection;
+      collection.reset(initialMenu);
+      menu = new MenuView({collection: this.collection});    
+      this.render(menu);
+    },
+
+    render: function (menu) {
+    	menu.$el.addClass('topMenu'); 
+      this.$el.append(menu.el);
     }
   });
 

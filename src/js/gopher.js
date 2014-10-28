@@ -1,4 +1,4 @@
-var accordion = require('./views/accordionView.js'),
+var app = require('./views/accordionView.js'),
 	initialMenus = [
 		{
 			label: '2010 Decennial US Census',
@@ -21,5 +21,5 @@ var accordion = require('./views/accordionView.js'),
 	];
 
 $(function () {
-	new accordion(initialMenus);
+	new app(initialMenus);
 });

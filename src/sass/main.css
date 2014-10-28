@@ -60,22 +60,29 @@ main {
     padding: 0;
     margin: 0;
     list-style-type: none; }
-  .accordion li {
-    padding: 12px 0;
-    border-bottom: 1px solid #c3c2bb; }
-    .accordion li:last-child {
+  .accordion ul.topMenu > li {
+    border-bottom: 1px solid #c3c2bb;
+    padding: 12px 0; }
+    .accordion ul.topMenu > li:last-child {
       border-bottom: 1px solid #fab06b; }
-    .accordion li h2 {
+    .accordion ul.topMenu > li h2 {
       font-weight: 100;
       font-style: italic;
-      font-size: 2.6em;
+      font-size: 2em;
       margin: 0;
       cursor: pointer; }
-    .accordion li ul {
-      display: none;
-      padding-left: 10px; }
-      .accordion li ul li:last-child {
-        border: none; }
+  .accordion li ul {
+    display: none;
+    padding: 5px 0 0 10px; }
+    .accordion li ul li {
+      font-size: 2em;
+      font-weight: 100;
+      padding: 5px 0;
+      color: #5E5E54; }
+      .accordion li ul li.sub-menu {
+        border: none;
+        color: #fab06b;
+        cursor: pointer; }
   @media only screen and (max-width: 900px) {
     .accordion {
       width: 90%; } }
