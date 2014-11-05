@@ -9,6 +9,13 @@ var model = require('../models/decenialModels.js'),
 				}).sortBy(function (model) {
 					return model.label;
 				}).value();
+		},
+
+		searchCurrPage: function (term, key) {
+			var toRemove = this.pluck(key).filter(function (i) {
+				return i.indexOf(term) === -1;
+			});
+			this.remove(toRemove);
 		}
 	});
 

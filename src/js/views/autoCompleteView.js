@@ -7,9 +7,11 @@ var jqueryUI = require('../vendor/jquery-ui.min.js'),
 	SearchView = Backbone.View.extend({
 		el: '#search',
 		template: _.template($('#searchTemplate').html()),
+		isPageSearch: false,
 
 		events: {
-			'keypress input': 'findMenus'
+			'keypress input': 'findMenus',
+			'change #searchType': 'flipSearch'
 		},
 
 		initialize: function (dataFile) {
@@ -25,22 +27,31 @@ var jqueryUI = require('../vendor/jquery-ui.min.js'),
 			var that = this;
 			this.$el.html(this.template);
 			this.$input = this.$el.children('input');
-			this.$input.autocomplete({
+			this.$input.autocomplete({ // TODO: Disable on this.isPageSearch!!
 				source: [],
-				select: function (e, ui) {that.buildMenu(ui)}
+				select: function (e, ui) { 
+					that.buildMenu(ui);
+				}
 			});
+		},
+
+		flipSearch: function () {
+			this.isPageSearch = !this.isPageSearch;
 		},
 
 		findMenus: function (e) {
 			var str = $(e.target).val(),
 				result = [];
 			if (str.length > 1) {
-				this.collection.each(function (model) {
-					var i = model.get('i');
-					if (i.indexOf(str) !== -1) result.push(i);
-				});
+				result = this.isPageSearch ? menuCollection.searchCurrPage(str, 'concept') : this.searchWholeDB(str, 'i');
 				this.$input.autocomplete({source: result})
 			}
+		},
+
+		searchWholeDB: function (term, key) {
+			return this.collection.pluck(key).filter(function (i) {
+				return i.indexOf(term) !== -1;
+			});
 		},
 
 		buildMenu: function (ui) {
