@@ -17,6 +17,7 @@ var gulp = require('gulp'),
 
 	runSass = function (style) {
 		return gulp.src('../sass/main.scss')
+		.on('error', swallowError)
     .pipe(sass({ style: style }))
     .pipe(gulp.dest('../sass'));
 	};

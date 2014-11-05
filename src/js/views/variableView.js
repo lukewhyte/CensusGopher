@@ -43,8 +43,6 @@ var collection = require('../collections/decenialCollection.js'),
     },
 
     openNewMenu: function ($newMenu) {
-      //this.$el.find('ul').slideUp('fast');
-      //this.$el.find('.slide h2').removeClass('active');
       $newMenu.addClass('active').next('ul').slideDown();
     },
 

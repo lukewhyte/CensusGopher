@@ -1,5 +1,6 @@
 @import url(normalize.css);
 @import url(html5boilerplate.css);
+@import url(jquery-ui.min.css);
 @import url("http://fonts.googleapis.com/css?family=Syncopate");
 @import url("http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,700");
 @import url("http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300");
@@ -8,6 +9,18 @@ body {
   background: #FFF;
   font-family: 'Open Sans', sans-serif;
   color: #5E5E54; }
+
+:-moz-placeholder {
+  padding-left: 2px; }
+
+::-webkit-input-placeholder {
+  padding-left: 2px; }
+
+::-moz-placeholder {
+  padding-left: 2px; }
+
+:-ms-input-placeholder {
+  padding-left: 2px; }
 
 header {
   width: 100%;
@@ -43,6 +56,26 @@ main {
   width: 100%; }
   main section {
     width: 100%; }
+
+#search {
+  text-align: center;
+  padding-bottom: 40px;
+  font-size: 14px;
+  display: none; }
+  #search input {
+    width: 280px;
+    height: 34px;
+    border-radius: 6px;
+    margin-right: 6px;
+    font-size: 16px; }
+  #search select {
+    width: 214px;
+    height: 28px;
+    border-radius: 6px; }
+
+.ui-menu-item {
+  font-size: 1.2em;
+  background: white; }
 
 .accordion {
   width: 80%;

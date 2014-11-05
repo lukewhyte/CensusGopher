@@ -23,8 +23,8 @@
   "homepage": "http://censusgopher.com",
   "dependencies": {
     "express": "~3.1.0",
-    "path": "~0.4.9",
-    "mongoose": "~3.5.5"
+    "mongoose": "~3.5.5",
+    "path": "~0.4.9"
   },
   "devDependencies": {
     "browserify": "^6.0.2",
