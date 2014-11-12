@@ -80,7 +80,7 @@ main {
 .accordion {
   width: 80%;
   max-width: 900px;
-  margin: 80px auto 0;
+  margin: 80px auto 100px;
   font-family: "museo-slab", serif; }
   .accordion h1 {
     font-weight: 100;
@@ -116,6 +116,9 @@ main {
         border: none;
         color: #fab06b;
         cursor: pointer; }
+  .accordion .hidden {
+    display: none;
+    visibility: hidden; }
   @media only screen and (max-width: 900px) {
     .accordion {
       width: 90%; } }

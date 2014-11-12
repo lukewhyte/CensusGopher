@@ -10,7 +10,7 @@ var jqueryUI = require('../vendor/jquery-ui.min.js'),
 		isPageSearch: false,
 
 		events: {
-			'keypress input': 'findMenus',
+			'keyup input': 'findMenus',
 			'change #searchType': 'flipSearch'
 		},
 
@@ -27,7 +27,7 @@ var jqueryUI = require('../vendor/jquery-ui.min.js'),
 			var that = this;
 			this.$el.html(this.template);
 			this.$input = this.$el.children('input');
-			this.$input.autocomplete({ // TODO: Disable on this.isPageSearch!!
+			this.$input.autocomplete({
 				source: [],
 				select: function (e, ui) { 
 					that.buildMenu(ui);
@@ -37,20 +37,22 @@ var jqueryUI = require('../vendor/jquery-ui.min.js'),
 
 		flipSearch: function () {
 			this.isPageSearch = !this.isPageSearch;
+			this.$input.autocomplete('option', 'disabled', !this.isPageSearch);
 		},
 
 		findMenus: function (e) {
-			var str = $(e.target).val(),
-				result = [];
+			var str = $(e.target).val();
 			if (str.length > 1) {
-				result = this.isPageSearch ? menuCollection.searchCurrPage(str, 'concept') : this.searchWholeDB(str, 'i');
-				this.$input.autocomplete({source: result})
+				if (this.isPageSearch) menuCollection.searchCurrPage(str, 'concept');
+				else this.$input.autocomplete({source: this.searchWholeDB(str, 'i')})
 			}
 		},
 
 		searchWholeDB: function (term, key) {
 			return this.collection.pluck(key).filter(function (i) {
-				return i.indexOf(term) !== -1;
+				var lowI = i.toLowerCase(),
+					lowTerm = term.toLowerCase();
+				return lowI.indexOf(lowTerm) !== -1;
 			});
 		},
 

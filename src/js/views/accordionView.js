@@ -1,6 +1,6 @@
 var MenuView = require('./menuView.js'),
 	collection = require('../collections/decenialCollection.js'),
-	SearchView = require('./autoCompleteView.js'),
+	SearchView = require('../autocomplete/autoComplete.js'),
 
   AccordionView = Backbone.View.extend({
     el: '.accordion',

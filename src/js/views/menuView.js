@@ -6,7 +6,7 @@ var MenuItemView = require('./variableView.js'),
       _.bindAll(this, 'renderItems');
       this.subViews = [];
       this.render();
-      this.listenTo(this.collection, 'reset', this.render)
+      this.listenTo(this.collection, 'reset', this.render);
     },
 
     renderItems: function (model) {

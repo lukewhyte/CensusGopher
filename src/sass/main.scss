@@ -96,7 +96,7 @@ main {
 .accordion {
   width: 80%;
   max-width: 900px;
-  margin: 80px auto 0;
+  margin: 80px auto 100px;
   font-family: "museo-slab", serif;
 
   h1 {
@@ -149,6 +149,11 @@ main {
         }
       }
     }
+  }
+
+  .hidden {
+    display: none;
+    visibility: hidden;
   }
 
   @include responsive(medium-screens) { width: 90%; }

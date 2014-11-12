@@ -7,6 +7,7 @@ var collection = require('../collections/decenialCollection.js'),
 
     initialize: function () {
       this.collection = collection;
+      this.listenTo(this.collection, 'checkHidden', this.searchFilter);
       this.render();
     },
 
@@ -48,6 +49,11 @@ var collection = require('../collections/decenialCollection.js'),
 
     closeThisMenu: function ($currMenu) {
       $currMenu.removeClass('active').next('ul').slideUp();
+    },
+
+    searchFilter: function () {
+      if (this.model.get('isHidden')) this.$el.addClass('hidden');
+      else this.$el.removeClass('hidden');
     }
   });
 

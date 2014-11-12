@@ -5,7 +5,8 @@ var DecenialData = Backbone.Model.extend({
 		parent: '',
 		children: null,
 		cells: null,
-		id: null
+		id: null,
+    isHidden: false
 	}
 });
 

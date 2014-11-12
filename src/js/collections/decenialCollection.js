@@ -12,10 +12,12 @@ var model = require('../models/decenialModels.js'),
 		},
 
 		searchCurrPage: function (term, key) {
-			var toRemove = this.pluck(key).filter(function (i) {
-				return i.indexOf(term) === -1;
+			this.each(function (model) {
+				// variableView.js listens for 'checkHidden'
+				var concept = model.get(key).toLowerCase();
+				if (concept.indexOf(term.toLowerCase()) === -1) model.set({isHidden: true}).trigger('checkHidden');
+				else model.set({isHidden: false}).trigger('checkHidden');
 			});
-			this.remove(toRemove);
 		}
 	});
 
