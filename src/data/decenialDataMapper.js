@@ -2,15 +2,13 @@ var input = data["census-api"].vars.var, // grab the array of variable objects
 	branches = {}, // This object will be used to build a semantic tree structure that will be flattened into result
 	result = [
 		{
-	    label: 'Housing',
-	    concept: 'Search for data based on housing parameters',
+	    desc: 'Housing - Search for data based on housing parameters',
 	    children: 'H',
 	    parent: 'decenialTop',
 	    cells: 25
 	  },
 	  {
-	    label: 'Population',
-	    concept: 'Search for data based on population parameters',
+	    desc: 'Population - Search for data based on population parameters',
 	    children: 'P',
 	    parent: 'decenialTop',
 	    cells: 84
@@ -88,6 +86,9 @@ var input = data["census-api"].vars.var, // grab the array of variable objects
 		};
 		if (typeof obj.label !== 'undefined') obj.label = parse.label(obj.label);
 		if (typeof obj.concept !== 'undefined') obj.concept = parse.concept(obj.concept);
+		obj.desc = obj.label + ' - ' +obj.concept;
+		delete obj.label;
+		delete obj.concept;
 	};
 
 _.chain(input)

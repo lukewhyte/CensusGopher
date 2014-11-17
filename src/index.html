@@ -19,7 +19,7 @@
       <div class="top"></div>
       <nav>
         <span class="left">GETTING STARTED</span>
-        <span class="title">CENSUS GOPHER</span>
+        <span class="title"><a href="/">CENSUS GOPHER</a></span>
         <span class="right">MY QUERY</span>
       </nav>
     </header>
@@ -32,15 +32,15 @@
     <script type="text/template" id="searchTemplate">
       <input placeholder="Search For Variables" list="menus" value="" name="varSearch" />
       <select name="searchType" id="searchType">
-        <option value="all" selected="selected">Search Whole Database</option>
+        <option value="all" selected="selected">Search Whole Survey</option>
         <option value="page">Search This Page</option>
       </select>
     </script>
     <script type="text/template" id="variableTemplate">
-      <h2><%= label %> &ndash; <%= concept %></h2>
+      <h2><%= desc %></h2>
       <ul>
-        <li class="cells">&ndash; This menu has <%= cells %> sub-menus/variables</li>
-        <li class="sub-menu">&ndash; Click to explore</li>
+        <li class="cells">&ndash; <%= subDesc %></li>
+        <li class="sub-menu">&ndash; <%= callToAction %></li>
       </ul>
     </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>

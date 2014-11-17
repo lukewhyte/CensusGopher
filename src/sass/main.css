@@ -43,7 +43,11 @@ header {
       font-size: 3.6em;
       width: 60%;
       text-align: center;
-      display: inline-block; }
+      display: inline-block;
+      cursor: pointer; }
+      header nav .title a:link, header nav .title a:visited, header nav .title a:hover, header nav .title a:active {
+        text-decoration: none;
+        color: #5E5E54; }
     header nav .right {
       float: left;
       padding: 12px 2% 0 0;

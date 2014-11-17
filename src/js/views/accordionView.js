@@ -1,5 +1,5 @@
-var MenuView = require('./menuView.js'),
-	collection = require('../collections/decenialCollection.js'),
+var collection = require('../collections/decenialCollection.js'),
+  MenuView = require('./menuView.js'),
 	SearchView = require('../autocomplete/autoComplete.js'),
 
   AccordionView = Backbone.View.extend({
@@ -15,7 +15,7 @@ var MenuView = require('./menuView.js'),
     },
 
     buildSearch: function () {
-    	var search = new SearchView('decenialDataAutoComplete.json');
+    	var search = new SearchView({data: 'decenialDataAutoComplete.json', parentCollection: this.collection});
     	search.$el.fadeIn();
     	this.$el.css('margin-top', '70px');
     },

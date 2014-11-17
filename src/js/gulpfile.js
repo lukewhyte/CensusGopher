@@ -6,7 +6,7 @@ var gulp = require('gulp'),
 	streamify = require('gulp-streamify'),
 	source = require('vinyl-source-stream'),
 	paths = {
-		scripts: ['./*.js', './models/*.js', './views/*.js', './collections/*.js'],
+		scripts: ['./*.js', './models/*.js', './views/*.js', './collections/*.js', './autocomplete/*.js', './router/*.js'],
 		sass: ['../sass/*.scss']
 	},
 

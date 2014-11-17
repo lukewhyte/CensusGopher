@@ -48,6 +48,12 @@ header {
       width: 60%;
       text-align: center;
       display: inline-block;
+      cursor: pointer;
+
+      a:link, a:visited, a:hover, a:active {
+        text-decoration: none;
+        color: $grey;
+      }
     }
 
     .right {

@@ -10,7 +10,10 @@ var MenuItemView = require('./variableView.js'),
     },
 
     renderItems: function (model) {
-      var variable = new MenuItemView({model: model});
+      var variable = new MenuItemView({
+        model: model,
+        collection: this.collection
+      });
       this.subViews.push(variable);
       this.$el.append(variable.el);
     },

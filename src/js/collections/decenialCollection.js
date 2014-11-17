@@ -5,19 +5,10 @@ var model = require('../models/decenialModels.js'),
 
 		parse: function (response) {
 			return _.chain(response).sortBy(function (model) {
-					return model.concept;
+					return model.desc.split(' - ')[1];
 				}).sortBy(function (model) {
-					return model.label;
+					return model.desc.split(' - ')[0];
 				}).value();
-		},
-
-		searchCurrPage: function (term, key) {
-			this.each(function (model) {
-				// variableView.js listens for 'checkHidden'
-				var concept = model.get(key).toLowerCase();
-				if (concept.indexOf(term.toLowerCase()) === -1) model.set({isHidden: true}).trigger('checkHidden');
-				else model.set({isHidden: false}).trigger('checkHidden');
-			});
 		}
 	});
 
