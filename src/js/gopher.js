@@ -1,5 +1,4 @@
 var App = require('./views/accordionView.js'),
-	Router = require('./router/router.js'),
 	initialMenus = [
 		{
 			desc: '2010 Decennial US Census - Compiled once every 10 years',
@@ -20,6 +19,4 @@ var App = require('./views/accordionView.js'),
 
 $(function () {
 	new App(initialMenus);
-	new Router();
-	Backbone.history.start();
 });

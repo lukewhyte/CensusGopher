@@ -21,9 +21,11 @@ var MenuItemView = require('./variableView.js'),
     render: function () {
       _.each(this.subViews, this.close);
       this.subViews = [];
-      this.collection.each(function (model) {
-        this.renderItems(model);
-      }, this);
+      if (this.collection.length !== 0) {
+        this.collection.each(function (model) {
+          this.renderItems(model);
+        }, this);
+      }
     },
 
     close: function (view) {

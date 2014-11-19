@@ -1,14 +1,20 @@
 var collection = require('../collections/decenialCollection.js'),
 	Router = Backbone.Router.extend({
 		routes: {
-			'survey/:survey/:children': 'findVars'
+			'survey/:survey/:state/:children/*vars': 'pipe'
 		},
 
 		initialize: function () {
 			this.listenTo(collection, 'reset', this.updateHistory);
 		},
 
-		findVars: function (survey, children) {
+		pipe: function (surver, state, children) {
+			if (state === 'review') { // as opposed to 'search'
+				this.findVars(children);
+			}
+		},
+
+		findVars: function (children) {
 			var that = this;
 			collection.url = '/api/vars/' + children;
 	    collection.fetch({
@@ -18,9 +24,11 @@ var collection = require('../collections/decenialCollection.js'),
 	  },
 
 	  updateHistory: function () {
-	  	children = _.last(collection.url.split('/'));
+	  	var children = _.last(collection.url.split('/'));
 	  	this.navigate('survey/decenial/' + children);
 	  }
-	});
+	}),
+	router = new Router();
 
-module.exports = Router;
+Backbone.history.start();
+module.exports = router;

@@ -1,9 +1,14 @@
 var collection = require('../collections/decenialCollection.js'),
+  router = require('../router/router.js'),
   MenuView = require('./menuView.js'),
 	SearchView = require('../autocomplete/autoComplete.js'),
 
   AccordionView = Backbone.View.extend({
     el: '.accordion',
+
+    events: {
+      'click .topMenu': 'addVariable' 
+    },
 
     initialize: function (initialMenu) {
     	var menu = {};
@@ -23,6 +28,12 @@ var collection = require('../collections/decenialCollection.js'),
     render: function (menu) {
     	menu.$el.addClass('topMenu'); 
       this.$el.append(menu.el);
+    },
+
+    addVariable: function (e) {
+      if ($(e.target).hasClass('variable')) {
+
+      }
     }
   });
 

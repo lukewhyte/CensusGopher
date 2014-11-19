@@ -10,8 +10,7 @@ var DecenialData = Backbone.Model.extend({
 	},
 
 	parse: function (model) {
-		model.isVariable = typeof model.id !== 'undefined';
-		if (model.isVariable) {
+		if (typeof model.id !== 'undefined') {
 			model.subDesc = 'This is a variable that will return ' + model.cells + ' pieces of data';
 			model.callToAction = 'Click to add to your query';
 		} else model.subDesc = 'This menu has ' + model.cells + ' sub-menus/variables';

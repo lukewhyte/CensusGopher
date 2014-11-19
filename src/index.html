@@ -40,7 +40,7 @@
       <h2><%= desc %></h2>
       <ul>
         <li class="cells">&ndash; <%= subDesc %></li>
-        <li class="sub-menu">&ndash; <%= callToAction %></li>
+        <li class="<%= !_.isUndefined(id) ? 'variable' : 'sub-menu' %>">&ndash; <%= callToAction %></li>
       </ul>
     </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
