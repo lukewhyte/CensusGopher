@@ -1,19 +1,25 @@
 var collection = require('../collections/decenialCollection.js'),
   router = require('../router/router.js'),
+  predator = require('./viewPredator.js'),
   MenuView = require('./menuView.js'),
 	SearchView = require('../autocomplete/autoComplete.js'),
 
   AccordionView = Backbone.View.extend({
     el: '.accordion',
 
-    initialize: function (initialMenu) {
-    	var menu = {};
+    initialize: function (initialMenu, queryString) {
       this.collection = collection;
       collection.reset(initialMenu);
-      menu = new MenuView({collection: this.collection});    
-      this.render(menu);
-      this.listenToOnce(this.collection, 'reset', this.buildSearch);
-      this.listenTo(this.collection, 'reset', this.closeAll);
+      this.menu = new MenuView({collection: this.collection});    
+      this.render(this.menu);
+      this.listenTo(this.collection, 'reset', this.removeIfEmpty);
+
+      if (Backbone.history.fragment.indexOf('search') !== -1) this.buildSearch();
+      else this.listenToOnce(this.collection, 'reset', this.buildSearch);
+
+      if (typeof queryString !== 'undefined') {
+        router.navigate(Backbone.History.fragment + queryString);
+      }
     },
 
     buildSearch: function () {
@@ -22,22 +28,15 @@ var collection = require('../collections/decenialCollection.js'),
     	this.$el.css('margin-top', '70px');
     },
 
-    render: function (menu) {
-    	menu.$el.addClass('topMenu'); 
-      this.$el.append(menu.el);
-      router.navigate('home')
+    render: function () {
+    	this.menu.$el.addClass('topMenu'); 
+      this.$el.append(this.menu.el);
     },
 
-    closeAll: function () {
+    removeIfEmpty: function () {
       if (this.collection.length === 0) {
-        this.close(this.search);
-        this.close(this);
+        predator.closeAll([this.search, this.menu, this]);
       }
-    },
-
-    close: function (view) {
-      view.remove();
-      view.unbind();
     }
   });
 

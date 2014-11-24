@@ -1,4 +1,5 @@
-var router = require('../router/router.js'),
+var predator = require('./viewPredator.js'),
+  QueryView = require('./queryView.js'),
   MenuItemView = Backbone.View.extend({
     tagName: 'li',
     className: 'slide',
@@ -50,13 +51,12 @@ var router = require('../router/router.js'),
     },
 
     addVariable: function (e) {
-      var urlArr = Backbone.history.fragment.split('/');
-      urlArr[2] = 'review';
+      var currSearch = _.last(this.collection.url.split('/')),
+      models = predator.prepNewView('query');
+      models.push(this.model.get('id'));
 
-      this.collection.url = '/api/vars/' + this.model.get('id');
-      console.log(this.collection.url);
-      this.collection.reset();
-      router.navigate(urlArr.join('/'), {trigger: true});
+      new QueryView(models, currSearch);
+      this.collection.reset(); // Tank this thing
     }
   });
 

@@ -1,47 +1,47 @@
-var collection = require('../collections/decenialCollection.js'),
-	QueryView = require('../views/queryView.js'),
+var searchCollection = require('../collections/decenialCollection.js'),
+	queryCollection = require('../collections/queryCollection.js'),
 	Router = Backbone.Router.extend({
 		routes: {
-			'survey/:survey/:state/:children': 'pipe',
-			'survey/:survey/:state/:children/*vars': 'pipe'
+			'survey/:survey/:state/:gopherHole': 'pipe'
 		},
 
 		initialize: function () {
-			this.listenTo(collection, 'reset', this.updateHistory);
+			this.listenTo(searchCollection, 'reset', this.updateSearchHistory);
 		},
 
-		pipe: function (survey, state, children, vars) {
+		pipe: function (survey, state, gopherHole) {
 			if (state === 'search') { // as opposed to 'review'
-				this.findVars(children);
+				this.findVars(gopherHole);
 			} else {
-				this.buildQueryPage(vars);
+				this.buildQueryPage(gopherHole);
 			}
 		},
 
 		findVars: function (children) {
 			var that = this;
-			collection.url = '/api/vars/' + children;
-	    collection.fetch({
+			searchCollection.url = '/api/vars/' + children;
+	    searchCollection.fetch({
 	      reset: true,
 	      error: function () {}
 	    });
 	  },
 
-	  buildQueryPage: function (vars) {
-	  	var varsArr = vars.split('/');
-	  	new QueryView(varsArr);
+	  updateSearchHistory: function () {
+	  	if (Backbone.history.fragment !== '') {
+	  		if (searchCollection.length !== 0) {
+			  	var children = _.last(searchCollection.url.split('/')),
+			  		query = window.location.search;
+			  	this.navigate('/survey/decenial/search/' + children + query);
+			  }
+		  } else {
+		  	this.navigate('home');
+		  }
 	  },
 
-	  updateHistory: function () {
-	  	var children = _.last(collection.url.split('/')),
-	  		url = Backbone.history.fragment,
-	  		urlArr = url.split('/');
-
-	  	if (url === 'home') {
-	  		this.navigate('/survey/decenial/search/' + children);
-	  	} else {
-	  		urlArr[3] = children;
-	  		this.navigate(urlArr.join('/'));
+	  updateQueryHistory: function (qString) {
+	  	if (queryCollection.length !== 0) {
+	  		var ids = queryCollection.pluck('id').join('-');
+	  		this.navigate('/survey/decenial/review/' + ids + qString);
 	  	}
 	  }
 	}),

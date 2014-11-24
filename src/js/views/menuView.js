@@ -1,4 +1,5 @@
-var MenuItemView = require('./variableView.js'),
+var predator = require('./viewPredator.js'),
+  VariableView = require('./variableView.js'),
   MenuView = Backbone.View.extend({
     tagName: 'ul',
 
@@ -10,7 +11,7 @@ var MenuItemView = require('./variableView.js'),
     },
 
     renderItems: function (model) {
-      var variable = new MenuItemView({
+      var variable = new VariableView({
         model: model,
         collection: this.collection
       });
@@ -19,18 +20,13 @@ var MenuItemView = require('./variableView.js'),
     },
 
     render: function () {
-      _.each(this.subViews, this.close);
+      _.each(this.subViews, predator.close);
       this.subViews = [];
       if (this.collection.length !== 0) {
         this.collection.each(function (model) {
           this.renderItems(model);
         }, this);
       }
-    },
-
-    close: function (view) {
-      view.remove();
-      view.unbind();
     }
   });
 

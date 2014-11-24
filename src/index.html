@@ -28,6 +28,7 @@
         <div id="search"></div>
         <h1>Click the survey you&#039;d like to query:</h1>
       </section>
+      <section class="queryPage"></section>
     </main>
     <script type="text/template" id="searchTemplate">
       <input placeholder="Search For Variables" list="menus" value="" name="varSearch" />
@@ -40,8 +41,11 @@
       <h2><%= desc %></h2>
       <ul>
         <li class="cells">&ndash; <%= subDesc %></li>
-        <li class="<%= !_.isUndefined(id) ? 'variable' : 'sub-menu' %>">&ndash; <%= callToAction %></li>
+        <li class="<%= !_.isNull(id) ? 'variable' : 'sub-menu' %>">&ndash; <%= callToAction %></li>
       </ul>
+    </script>
+    <script type="text/template" id="queryTemplate">
+      <h2>WE DID IT!!</h2>
     </script>
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="js/vendor/underscore.js"></script>
