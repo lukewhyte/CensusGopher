@@ -45,6 +45,8 @@ header {
       text-align: center;
       display: inline-block;
       cursor: pointer; }
+      header nav .title span {
+        font-size: 0.2em; }
       header nav .title a:link, header nav .title a:visited, header nav .title a:hover, header nav .title a:active {
         text-decoration: none;
         color: #5E5E54; }
@@ -116,7 +118,7 @@ main {
       font-weight: 100;
       padding: 5px 0;
       color: #5E5E54; }
-      .accordion li ul li.sub-menu {
+      .accordion li ul li.sub-menu, .accordion li ul li.variable {
         border: none;
         color: #fab06b;
         cursor: pointer; }

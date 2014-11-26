@@ -4,7 +4,8 @@ var jqueryUI = require('../vendor/jquery-ui.min.js'),
 		model: AutocompleteModel
 	}),
 	SearchView = Backbone.View.extend({
-		el: '#search',
+		tagName: 'div',
+		id: 'search',
 		template: _.template($('#searchTemplate').html()),
 
 		events: {
@@ -24,7 +25,7 @@ var jqueryUI = require('../vendor/jquery-ui.min.js'),
 
 		render: function () {
 			var that = this;
-			this.$el.html(this.template);
+			this.$el.html(this.template).prependTo('section.accordion');
 			this.$input = this.$el.children('input');
 			this.$input.autocomplete({
 				minLength: 2,

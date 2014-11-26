@@ -6,20 +6,20 @@ var collection = require('../collections/decenialCollection.js'),
 
   AccordionView = Backbone.View.extend({
     el: '.accordion',
+    search: {},
+    menu: false,
+    title: '<h1>Click the survey you&#039;d like to query:</h1>',
 
-    initialize: function (initialMenu, queryString) {
+    initialize: function (initialMenu) {
       this.collection = collection;
-      collection.reset(initialMenu);
-      this.menu = new MenuView({collection: this.collection});    
-      this.render(this.menu);
-      this.listenTo(this.collection, 'reset', this.removeIfEmpty);
-
-      if (Backbone.history.fragment.indexOf('search') !== -1) this.buildSearch();
-      else this.listenToOnce(this.collection, 'reset', this.buildSearch);
-
-      if (typeof queryString !== 'undefined') {
-        router.navigate(Backbone.History.fragment + queryString);
-      }
+      if (initialMenu) collection.reset(initialMenu);
+          
+      this.render();
+      this.listenToOnce(this.collection, 'reset', this.buildSearch);
+      this.listenTo(this.collection, 'reset', function () {
+        this.render();
+        this.removeIfEmpty();
+      });
     },
 
     buildSearch: function () {
@@ -28,14 +28,24 @@ var collection = require('../collections/decenialCollection.js'),
     	this.$el.css('margin-top', '70px');
     },
 
-    render: function () {
-    	this.menu.$el.addClass('topMenu'); 
+    buildMenu: function () {
+      this.$el.prepend(this.title);
+      this.menu = new MenuView({collection: this.collection});
+      this.menu.$el.addClass('topMenu'); 
       this.$el.append(this.menu.el);
+    },
+
+    render: function () {
+      if (!this.menu) this.buildMenu();
+      if (!this.search) this.buildSearch();
     },
 
     removeIfEmpty: function () {
       if (this.collection.length === 0) {
-        predator.closeAll([this.search, this.menu, this]);
+        predator.closeAll([this.search, this.menu]);
+        this.$el.empty();
+        this.menu = false;
+        this.search = false;
       }
     }
   });

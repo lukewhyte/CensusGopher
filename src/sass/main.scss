@@ -50,6 +50,8 @@ header {
       display: inline-block;
       cursor: pointer;
 
+      span { font-size: 0.2em; }
+
       a:link, a:visited, a:hover, a:active {
         text-decoration: none;
         color: $grey;
@@ -148,7 +150,7 @@ main {
         padding: 5px 0;
         color: $grey;
 
-        &.sub-menu { 
+        &.sub-menu, &.variable { 
           border: none; 
           color: lighten($orange, 20%);
           cursor: pointer;
